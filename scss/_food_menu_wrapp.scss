@@ -1,0 +1,256 @@
+.food_menu_wrapp{
+  background: url("../img/cook_menu.jpg") no-repeat;
+  background-size: cover;
+  padding-top: 5.482em;
+  padding-bottom: 5em;
+  .main_wrapper{
+    @extend .flex-default;
+  }
+  .food_menu{
+    font-family: $alegria-bold;
+    @extend .flex-column;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+  }
+  .breakfast{
+    font-size: 4.285em;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.1em;
+  }
+  .subbreakfast{
+    text-transform: uppercase;
+    font-size: 1.286em;
+    color: $middle-brown;
+  }
+  .other_food{
+    font-size: 2.143em;
+    color: white;
+    margin-top: 1.5em;
+  }
+  .other_subfood{
+    font-family: $proxima;
+    color: $food_menu;
+    margin-top: 0.3em;
+    letter-spacing: 0.1em;
+  }
+
+  .prise{
+    font-size: 2.7em;
+    margin-top: 0.4em;
+    color: $light-brown;
+  }
+  .sheets{
+    //width: 50%;
+    flex: 1;
+    @extend .flex-center;
+    justify-content: flex-end;
+  }
+  .sheet_wrapp{
+    width: 31.5em;
+    height: 42.857em;
+    position: relative;
+    &:before{
+      content: "";
+      width: 95%;
+      height: 95%;
+      border: 1px dashed $text;
+      position: absolute;
+      z-index: 5;
+      top: 2.5%;
+      left: 2.5%;
+      pointer-events: none;
+    }
+  }
+  .sheet{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 30px);
+    height: 100%;
+    background: $sheet url("../img/koloski.png") 357% 118% no-repeat;;
+    z-index: 4;
+    font-family: $alegria-bold;
+    color: $text;
+  }
+  .string{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: calc(100% - 30px);
+    background: $sheet;
+    &:before{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -30px;
+      border-top: 15px solid white;
+      border-right: 15px solid white;
+      border-bottom: 15px solid transparent;
+      border-left: 15px solid transparent;
+      box-shadow: 0 3px 10px 3px rgba(0,0,0,0.1);
+      z-index: 5;
+
+    }
+  }
+  .seconde_sheet{
+    height: 90%;
+    width: 2em;
+    background: #d9d6c8;
+    position: absolute;
+    right: -1em;
+    top: 5%;
+    z-index: 2;
+    &:after{
+      content: "";
+      height: 95%;
+      border-left: 1px dashed $text;
+      transform: translate3d(1.2em, 1em, 0);
+      position: absolute;
+    }
+  }
+  .third_sheet{
+    height: 80%;
+    width: 3em;
+    background: #c0bcb1;
+    position: absolute;
+    right: -2em;
+    top: 10%;
+    z-index: 1;
+    &:after{
+      content: "";
+      height: 95%;
+      border-left: 1px dashed $text;
+      transform: translate3d(2.2em, 1em, 0);
+      position: absolute;
+    }
+  }
+  .est_year{
+    @extend .flex-center;
+    justify-content: space-around;
+    margin-top: 4em;
+  }
+  .e_y{
+    text-transform: uppercase;
+  }
+  .line{
+    margin-top: 2.6em;
+    border-top: 1px solid $text;
+    width: 86%;
+    margin-left: 1em;
+    position: relative;
+    &:before,
+    &:after{
+      content: "";
+      height: 1em;
+      width: 1em;
+      background: $sheet;
+      border: 1px solid $text;
+      position: absolute;
+      top: -0.55em;
+      border-radius: 50%;
+    }
+    &:before{
+      left: -0.5em;
+    }
+    &:after{
+      right: -0.5em;
+    }
+  }
+  .bread{
+    height: 4.286em;
+    width: 4.286em;
+    border-radius: 50%;
+    border: 1px solid $text;
+    position: absolute;
+    transform: translate3d(-50%, -50%, 0);
+    left: 50%;
+    top: 0;
+    background: $sheet url("../img/rogalik.png") center center no-repeat;
+
+  }
+  .title{
+    font-size: 3.14em;
+    margin: 2.1em auto 0;
+    text-align: center;
+    max-width: 97%;
+    transform: translateX(-15px);
+  }
+  .text{
+    font-family: $proxima;
+    margin: 2.5em auto 0;
+    line-height: 2em;
+    max-width: 80%;
+    text-align: center;
+  }
+  .button{
+    text-transform: uppercase;
+    border: 1px solid $text;
+    color: $middle-brown;
+    padding: 0.8em 4.2em;
+    margin: 2.9em auto 0;
+    font-size: 1.2em;
+    display: block;
+    font-family: $alegria-bold;
+    background: transparent;
+    transform: translateX(-20px);
+    cursor: pointer;
+    &:hover{
+      background: rgba(0,0,0,0.4);
+    }
+  }
+}
+
+@media screen and (max-width: 1360px){
+  .food_menu_wrapp{
+    .main_wrapper{
+      margin: 0 1em;
+    }
+    .sheet_wrapp{
+      margin-right: 2em;
+    }
+  }
+}
+
+@media screen and (max-width: 860px){
+  .food_menu_wrapp{
+    .main_wrapper{
+      flex-direction: column;
+    }
+    .sheets{
+      margin-top: 2em;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 530px){
+  .food_menu_wrapp{
+    .seconde_sheet,
+    .third_sheet{
+      display: none;
+    }
+    .sheet_wrapp{
+      margin-right: 0;
+    }
+    .string{
+      display: none;
+    }
+    .sheet{
+      width: 100%;
+      padding: 0 1em;
+    }
+    .line{
+      margin: 2.6em auto 0;
+    }
+    .title{
+      font-size: 2em;
+      transform: translateX(0);
+    }
+    .button{
+      transform: translateX(0);
+    }
+  }
+}

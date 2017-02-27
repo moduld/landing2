@@ -1,0 +1,130 @@
+.flex-default{
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.flex-wrapp{
+  @extend .flex-default;
+  flex-wrap: wrap;
+}
+.flex-column{
+  @extend .flex-default;
+  flex-direction: column;
+}
+.flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //word-break: break-all;
+}
+html{
+  height: 100%;
+}
+body{
+  min-height: 100%;
+  font-size: 14px;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+
+}
+.overflowed{
+  overflow: hidden;
+  position: relative;
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: rgba(0,0,0,0.5);
+  }
+}
+.main_wrapper{
+  max-width: 90.357em;
+  margin: 0 auto;
+}
+.nav_items{
+  @extend .flex-default;
+  justify-content: center;
+  flex: auto;
+  margin: 0 2em;
+  z-index: 11;
+}
+.nav_item{
+  @extend .flex-center;
+  &:before{
+    content: '~';
+  }
+  &:first-child:before{
+    display: none;
+  }
+}
+.link{
+  display: block;
+  color: white;
+  text-transform: uppercase;
+  font-family: $alegria;
+  padding: 1em 2.857em;
+  letter-spacing: 0.2em;
+  &:hover{
+    color: $light-brown;
+  }
+}
+.burger_menu{
+  display: none;
+}
+.in_menu_toggle{
+  display: none;
+}
+.nav_title{
+  font-family: $scriptina;
+  font-size: 2.3em;
+  letter-spacing: 0.25em;
+  line-height: 1.8em;
+  margin: 0.2em 0 0.2em 0.5em;
+}
+
+.square{
+  height: 14.286em;
+  width: 14.286em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate3d(50%, -21%, 0);
+  background: url("../img/slider_label.jpg");
+  box-shadow: 0 33px 53px rgba(0, 0, 0, 0.22);
+  .square_title{
+    text-transform: uppercase;
+    font-size: 1.3em;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-top: 1.6em;
+    color: $middle-brown;
+  }
+  .quont{
+    font-size: 6em;
+    text-align: center;
+    display: block;
+    color: $light-brown;
+  }
+  .mins{
+    font-size: 1.2em;
+    text-align: center;
+    display: block;
+    margin-top: -0.8em;
+    color: $text;
+  }
+}
+
